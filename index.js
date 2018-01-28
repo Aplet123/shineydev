@@ -76,7 +76,7 @@ for (let dir of fs.readdirSync(path.join(__dirname, "api"))) {
 for (let dir of fs.readdirSync(path.join(__dirname, "pages"))) {
     if((!/^.+\.js$/i.test(dir) && !/^.+\.disabled$/i.test(dir)) || (/^.+\.folder\.js$/i.test(dir) && !/^.+\.disabled$/i.test(dir))) {
         require(path.join(__dirname, "pages", dir, "index.js")).init(app, {
-            BASE: process.env["PAGES" + dir.toUpperCase() + "BASE"] || ( "/pages/" + ((/^.+\.unstable$/i.test(dir)) ? "unstable/" : "") + dir.replace(/\.folder\.js$/i, ".js").replace(/\.unstable$/i, "") + "/" )
+            BASE: process.env["PAGES" + dir.toUpperCase() + "BASE"] || ( "/" + ((/^.+\.unstable$/i.test(dir)) ? "unstable/" : "") + dir.replace(/\.folder\.js$/i, ".js").replace(/\.unstable$/i, "") + "/" )
         });
     }
 }

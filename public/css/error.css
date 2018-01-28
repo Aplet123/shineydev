@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+p {
+	font-family: "Open Sans", sans-serif;
+}
+
+.uhoh {
+	font-size: 100px;
+	text-align: center;
+	font-weight: 700;
+	color: red;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.desc {
+	font-size: 40px;
+	text-align: center;
+	font-weight: 700;
+}
+img {
+	display: block;
+	margin: auto;
+}
