@@ -21,6 +21,12 @@ input {
 	width: 400px;
 	margin-bottom: 30px;
 }
+.errorinput {
+	border-bottom-color: #ff0000;
+}
+textarea.errorinput, button.errorinput {
+	border-color: #ff0000;
+}
 .inline {
 	display: inline;
 	width: 200px;
@@ -42,4 +48,12 @@ button {
 }
 img {
 	padding-left: 136px;
+}
+.hidden {
+	display: none;
+}
+.error {
+	font-size: 12px;
+	color: red;
+	font-weight: 700;
 }

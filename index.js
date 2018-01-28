@@ -17,6 +17,11 @@ if(! process.env.ENGINE) {
 
 app.set('port', (process.env.PORT || 5000));
 
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
+
 app.use(function(req, res, next) {
     if (!/^[-a-zA-Z0-9_.]+(?::\d+)?$/i.test((req.get("Host") || ""))) {
         res.status(400);

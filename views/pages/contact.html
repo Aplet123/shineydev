@@ -5,14 +5,17 @@
         <link rel="icon" href="/imgs/shineydev.png">
         <link rel="stylesheet" href="/css/contact.css">
         <meta charset="utf8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script defer src="js/contact.js"></script>
     </head>
     <body>
         <p>Contact ShineyDev</p>
+        <p id="error" class="hidden"></p>
     	<input id="first" class="inline" placeholder="First Name">
         <input id="last" class="inline" placeholder="Last Name">
         <input id="email" placeholder="Email Address or Discord Tag (should look like ShineyDev#3116)">
         <textarea id="message" placeholder="Contact Message"></textarea>
-        <button>Contact!</button>
+        <button id="contactbutton">Contact!</button>
         <img src="/imgs/shineydev.png" alt="ShineyDev logo" width="128" height="128"/>
     </body>
 </html>
