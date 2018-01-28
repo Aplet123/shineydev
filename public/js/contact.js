@@ -49,14 +49,14 @@ sb.addEventListener("click", function () {
         errmsg("Error: Malformed email address or Discord tag. If it is a Discord tag, it must be of the form Username#discriminator, e.g. ShineyDev#3116");
         return;
     }
-    if (idval("message").length < 30) {
+    if (idval("message").replace(/\W/gi, "").length < 30) {
         errid("message");
-        errmsg("Error: Contact message must be at least 30 characters");
+        errmsg("Error: Contact message must have at least 30 alphanumeric characters (a-zA-Z0-9)");
         return;
     }
     if (idval("message").length > 1000) {
         errid("message");
-        errmsg("Error: Contact message must be at most 1000 characters");
+        errmsg("Error: Contact message cannot have more than 1000 characters");
         return;
     }
     $.ajax({
@@ -88,7 +88,7 @@ document.body.addEventListener("keydown", function (e) {
     if (! sb.parentElement) {
         return;
     }
-    if (e.code == "Enter") {
+    if (e.code == "Enter" && e.ctrlKey) {
         sb.click();
     }
 });
@@ -97,7 +97,7 @@ document.getElementById("message").addEventListener("input", function () {
         return;
     }
     document.getElementById("charcount").innerHTML = this.value.length + "/1000 chars";
-    if (Number(this.value.length) < 30 || Number(this.value.length) > 1000) {
+    if (Number(this.value.replace(/\W/gi, "").replace(/(\w)\1{2,}/g, "$1$1").length) < 30 || Number(this.value.length) > 1000) {
         $("#charcount").addClass("redtext");
     } else {
         $("#charcount").removeClass("redtext");

@@ -20,7 +20,7 @@ module.exports = {
                 res.sendStatus(400);
                 return;
             }
-            if (req.body.first.length == 0 || req.body.last.length == 0 || req.body.message.length < 30 || req.body.message.length > 1000 || req.body.first.length > 50 || req.body.last.length > 50 || req.body.email.length > 50) {
+            if (req.body.first.length == 0 || req.body.last.length == 0 || req.body.message.replace(/\W/gi, "").replace(/(\w)\1{2,}/g, "$1$1").length < 30 || req.body.message.length > 1000 || req.body.first.length > 50 || req.body.last.length > 50 || req.body.email.length > 50) {
                 res.sendStatus(400);
                 return;
             }
@@ -36,7 +36,7 @@ module.exports = {
                         footer: {
                             text: "Contact at: " + req.body.email
                         },
-                        description: req.body.message,
+                        description: req.body.message.replace(/(\w)\1{2,}/g, "$1$1").replace(/(\W)\1+/g, "$1"),
                         color: 0x0000ff
                     }]
                 }
