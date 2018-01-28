@@ -29,7 +29,7 @@ module.exports = {
                 return;
             }
             request.post({
-                url: "https://canary.discordapp.com/api/webhooks/407247225392201729/f5Qkzm6ukzEPlnglqBG_afbhoeI8CpIzEBnxl2tqtw577SwW7kREhx7Oz0u4swE6wEqb",
+                url: process.env.CONTACT_WEBHOOK,
                 json: {
                     embeds: [{
                         title: `New Contact from ${req.body.first} ${req.body.last}`,
