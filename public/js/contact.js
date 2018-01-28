@@ -92,3 +92,14 @@ document.body.addEventListener("keydown", function (e) {
         sb.click();
     }
 });
+document.getElementById("message").addEventListener("input", function () {
+    if (! sb.parentElement) {
+        return;
+    }
+    document.getElementById("charcount").innerHTML = this.value.length + "/1000 chars";
+    if (Number(this.value.length) < 30 || Number(this.value.length) > 1000) {
+        $("#charcount").addClass("redtext");
+    } else {
+        $("#charcount").removeClass("redtext");
+    }
+});
