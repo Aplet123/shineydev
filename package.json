@@ -4,7 +4,7 @@
   "description": "A website that's made for Shiney.",
   "engines": {
     "node": "9.4.0",
-    "npm": "5.5.1"
+    "npm": "5.6.0"
   },
   "main": "index.js",
   "scripts": {
